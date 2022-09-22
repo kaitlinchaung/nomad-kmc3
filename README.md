@@ -43,23 +43,7 @@ results/
 │   └── step_4_get_abundant_anchors
 ├── module_3_nomad_statistics
 │   └── step_1_compute_pvals
-│       ├── Muscle_Endothelial_capillary_endothelial_cell
-│       ├── Muscle_Endothelial_endothelial_cell_of_artery
-│       ├── Muscle_Endothelial_endothelial_cell_of_lymphatic_vessel
-│       ├── Muscle_Endothelial_endothelial_cell_of_vascular_tree
-│       ├── Muscle_Immune_cd4_positive__alpha_beta_t_cell
-│       ├── Muscle_Immune_erythrocyte
-│       ├── Muscle_Immune_macrophage
-│       ├── Muscle_Immune_mast_cell
-│       ├── Muscle_Immune_mature_nk_t_cell
-│       ├── Muscle_Immune_t_cell
-│       ├── Muscle_Stromal_fast_muscle_cell
-│       ├── Muscle_Stromal_mesenchymal_cell
-│       ├── Muscle_Stromal_mesenchymal_stem_cell
-│       ├── Muscle_Stromal_pericyte_cell
-│       ├── Muscle_Stromal_skeletal_muscle_satellite_stem_cell
-│       ├── Muscle_Stromal_slow_muscle_cell
-│       └── Muscle_Stromal_tendon_cell
+│   └── step_2_significant_anchors
 └── pipeline_info
 ```
 
