@@ -42,23 +42,17 @@ include { SAMPLESHEET_CHECK } from './modules/local/samplesheet_check'
 //
 
 workflow RUN_NOMAD {
-    if (params.run_anchor_heatmaps){
-        // Workflow to only plot heatmaps on previously-run data
-        PLOT_HEATMAPS ()
+
+    if (params.is_10X) {
+        // Workflow to run NOMAD on 10X samples
+        NOMAD_10X ()
 
     } else {
-
-        if (params.is_10X) {
-            // Workflow to run NOMAD on 10X samples
-            NOMAD_10X ()
-
-        } else {
-            // Workflow to run NOMAD on bulk RNAseq and SS2 samples
-            NOMAD ()
-
-        }
+        // Workflow to run NOMAD on bulk RNAseq and SS2 samples
+        NOMAD ()
 
     }
+
 }
 
 /*

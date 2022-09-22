@@ -75,9 +75,9 @@ workflow NOMAD_10X {
         )
         .map { row ->
             tuple(
-                row[0],
-                file(row[1]),
-                file(row[2])
+                row[0],         // sample
+                file(row[1]),   // Read 1
+                file(row[2])    // Read 2
             )
         }
 
@@ -112,6 +112,9 @@ workflow NOMAD_10X {
             lookahead = GET_LOOKAHEAD.out.lookahead.toInteger()
         }
 
+        /*
+        // Subworkflow: Preprocess 10X files
+        */
         PREPROCESS_10X(
             ch_paired_fastqs
         )
