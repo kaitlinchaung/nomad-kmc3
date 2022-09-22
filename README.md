@@ -14,7 +14,7 @@ To test this pipeine, use the command below. The `test` profile will launch a pi
 
 How to run with singularity:
 ```bash
-nextflow run kaitlinchaung/nomad \
+nextflow run kaitlinchaung/nomad-kmc3 \
     -profile test,singularity \
     -r main \
     -latest
@@ -22,7 +22,7 @@ nextflow run kaitlinchaung/nomad \
 
 How to run with docker:
 ```bash
-nextflow run kaitlinchaung/nomad \
+nextflow run kaitlinchaung/nomad-kmc3 \
     -profile test,docker \
     -r main \
     -latest
