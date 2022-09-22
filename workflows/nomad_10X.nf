@@ -140,7 +140,7 @@ workflow NOMAD_10X {
         abundant_stratified_anchors
     )
 
-    if (! params.run_pvals_only) {
+    if (params.run_annotations) {
         // define
         anchors_pvals = PVALUES.out.anchors_pvals
 

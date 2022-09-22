@@ -155,11 +155,6 @@ def main():
     df['anchSample_cts'] = df.groupby(['anchor','sample']).counts.transform('sum')
     df['anch_cts'] = df.groupby('anchor').counts.transform('sum') ## number of reads per anchor
 
-    #### TEMP OUTPUT FOR DEBUGGING ####
-    outfile_count_matrix = "counts_" + args.infile.split('.')[0] + ".csv"
-    df.to_csv(outfile_count_matrix, index=False)
-    #### TEMP OUTPUT FOR DEBUGGING ####
-
     logging.info(f"Size of df before filtering = {len(df)}")
 
     df = df[

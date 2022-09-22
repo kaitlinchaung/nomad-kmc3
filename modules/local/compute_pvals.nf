@@ -5,9 +5,9 @@ process COMPUTE_PVALS {
     label "process_high"
     conda (params.enable_conda ? "conda-forge::python=3.9.5 pandas=1.4.3 numpy conda-forge::mmh3=3.0.0 anaconda::scipy=1.7.3 anaconda::nltk=3.7" : null)
     publishDir(
-        path: {"${params.outdir}/${samplesheet_id}/counts_matrices"},
+        path: {"${params.outdir}/module_3_nomad_statistics/step_1_compute_pvals/${samplesheet_id}"},
         mode: "copy",
-        pattern: "*.csv")
+        pattern: "scores*.tsv")
 
     input:
     tuple val(samplesheet_id), path(samplesheet), path(counts)
@@ -25,8 +25,6 @@ process COMPUTE_PVALS {
     tuple val(samplesheet_id), path(samplesheet), path(outfile_scores), emit: scores, optional: true
     path "*extra_info*"         , emit: extra_info                  , optional: true
     path "*pkl"                 , emit: pkl                         , optional: true
-    // TEMP FOR DEBUGGING
-    path "*csv"
 
     script:
     def run_unsupervised_pvals  = (run_unsupervised_pvals == true)  ? "--run_unsupervised_pvals" : ""
